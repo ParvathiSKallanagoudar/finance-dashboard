@@ -1,29 +1,62 @@
-import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from "recharts";
+import {
+  PieChart,
+  Pie,
+  Cell,
+  Tooltip,
+  Legend,
+} from "recharts";
 
-const data = [
-  { name: "Food", value: 400 },
-  { name: "Travel", value: 300 },
-  { name: "Shopping", value: 300 },
-  { name: "Bills", value: 200 },
-];
+const CategoryChart = ({ transactions }) => {
+  const categoryData = {};
 
-const COLORS = ["#22C55E", "#EF4444", "#3B82F6", "#F59E0B"];
+  transactions
+    .filter((t) => t.type === "expense")
+    .forEach((t) => {
+      categoryData[t.category] =
+        (categoryData[t.category] || 0) + Number(t.amount);
+    });
 
-const CategoryChart = () => {
+  const data = Object.keys(categoryData).map((key) => ({
+    name: key,
+    value: categoryData[key],
+  }));
+
+  const COLORS = ["#3b82f6", "#ef4444", "#f59e0b", "#10b981"];
+
+  const total = data.reduce((sum, item) => sum + item.value, 0);
+
   return (
-    <div className="bg-white p-5 rounded-2xl shadow">
-      <h3 className="mb-4 font-semibold">Spending Breakdown</h3>
+    <div className="bg-white p-5 rounded-xl shadow border">
+      <h3 className="font-semibold mb-4">Spending Breakdown</h3>
 
-      <ResponsiveContainer width="100%" height={250}>
-        <PieChart>
-          <Pie data={data} dataKey="value" outerRadius={80}>
+      <div className="relative flex justify-center items-center">
+        <PieChart width={300} height={250}>
+          <Pie
+            data={data}
+            cx="50%"
+            cy="50%"
+            innerRadius={50}
+            outerRadius={80}
+            dataKey="value"
+          >
             {data.map((entry, index) => (
-              <Cell key={index} fill={COLORS[index]} />
+              <Cell
+                key={`cell-${index}`}
+                fill={COLORS[index % COLORS.length]}
+              />
             ))}
           </Pie>
+
           <Tooltip />
+          <Legend />
         </PieChart>
-      </ResponsiveContainer>
+
+        {/* Center Text */}
+        <div className="absolute text-center">
+          <p className="text-lg font-bold">₹{total}</p>
+          <p className="text-xs text-gray-500">spent</p>
+        </div>
+      </div>
     </div>
   );
 };

@@ -1,16 +1,187 @@
-# React + Vite
+# 💰 Finance Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📌 Overview
 
-Currently, two official plugins are available:
+This project is a responsive **Finance Dashboard** built using React and Tailwind CSS.
+It allows users to track income, expenses, and financial insights through interactive UI components and charts.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+The goal of this project is to demonstrate strong frontend development skills including component-based architecture, state management, and data visualization.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Features
 
-## Expanding the ESLint configuration
+### 📊 Dashboard Overview
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* Summary cards displaying:
+
+  * Total Balance
+  * Income
+  * Expenses
+* Line chart showing balance trends over time
+* Pie chart showing category-wise spending
+
+---
+
+### 📋 Transactions Section
+
+* Displays a list of transactions with:
+
+  * Date
+  * Category
+  * Amount
+  * Type (Income/Expense)
+
+* Features:
+
+  * Search by category
+  * Filter by type (Income/Expense)
+  * **Latest transactions view (top 4)**
+  * **View All / Show Less toggle**
+  * Add and delete transactions (Admin role)
+
+---
+
+### 🔐 Role-Based UI
+
+* **Viewer**
+
+  * Can only view data
+* **Admin**
+
+  * Can add and delete transactions (UI-level simulation)
+
+---
+
+### 💡 Insights Section
+
+* Dynamic insights based on transaction data:
+
+  * Highest spending category
+  * Total income vs expenses
+  * Financial observation
+
+---
+
+### 💰 Additional Features
+
+* Budget Tracker with progress indicators
+* Savings Goals with progress tracking
+* Dark Mode 🌙
+* Smooth UI transitions
+* Fully responsive design
+
+---
+
+## 🛠️ Tech Stack
+
+* React (Vite)
+* Tailwind CSS
+* Recharts
+* JavaScript (ES6+)
+
+---
+
+## 📁 Project Structure
+
+src/
+│── components/
+│   ├── SummaryCard.jsx
+│   ├── BalanceChart.jsx
+│   ├── CategoryChart.jsx
+│   ├── TransactionTable.jsx
+│   ├── Insights.jsx
+│   ├── BudgetTracker.jsx
+│   ├── SavingsGoals.jsx
+│
+│── layout/
+│   ├── Sidebar.jsx
+│   ├── Topbar.jsx
+│
+│── App.jsx
+│── main.jsx
+
+---
+
+## ⚙️ Installation & Setup
+
+1. Clone the repository:
+
+```
+git clone https://github.com/ParvathiSKallanagoudar/finance-dashboard.git
+```
+
+2. Navigate to project folder:
+
+```
+cd finance-dashboard
+```
+
+3. Install dependencies:
+
+```
+npm install
+```
+
+4. Run the development server:
+
+```
+npm run dev
+```
+
+---
+
+## 🌐 Live Demo
+
+👉 https://ParvathiSKallanagoudar.github.io/finance-dashboard/
+
+---
+
+## 🎯 Approach
+
+* Built reusable and modular components
+* Managed global state using React hooks
+* Implemented dynamic charts for better data visualization
+* Designed a clean and user-friendly UI
+* Simulated real-world financial scenarios using mock data
+* Focused on performance and responsiveness
+
+---
+
+## 📱 Responsiveness
+
+* Fully responsive layout
+* Works seamlessly on:
+
+  * Desktop
+  * Tablet
+  * Mobile devices
+
+---
+
+## ✨ Future Improvements
+
+* Backend integration (API-based data)
+* Authentication system
+* Data persistence (database or local storage)
+* Advanced analytics and reports
+* Export data (CSV/JSON)
+
+---
+
+## 📸 Screenshots
+
+(Add screenshots of your dashboard here)
+
+---
+
+## 🙌 Conclusion
+
+This project demonstrates the ability to build a clean, interactive, and responsive financial dashboard using modern frontend technologies. It reflects practical understanding of UI/UX, state management, and component-based design.
+
+---
+
+## 👩‍💻 Author
+
+**Parvathi S Kallanagoudar**
+Frontend Developer
