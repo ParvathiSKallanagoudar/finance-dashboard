@@ -133,7 +133,7 @@ npm run dev
 
 ## 🌐 Live Demo
 
-👉 https://ParvathiSKallanagoudar.github.io/finance-dashboard/
+👉 https://finance-dashboard-wunm-lr0pp4ejk.vercel.app
 
 ---
 
